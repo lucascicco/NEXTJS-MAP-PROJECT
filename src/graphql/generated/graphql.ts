@@ -2398,3 +2398,26 @@ export type GetPlacesQuery = (
     )> }
   )> }
 );
+
+export type GetPlaceBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type GetPlaceBySlugQuery = (
+  { __typename?: 'Query' }
+  & { place?: Maybe<(
+    { __typename?: 'Place' }
+    & Pick<Place, 'id' | 'slug' | 'name'>
+    & { location: (
+      { __typename?: 'Location' }
+      & Pick<Location, 'latitude' | 'longitude'>
+    ), description?: Maybe<(
+      { __typename?: 'RichText' }
+      & Pick<RichText, 'html' | 'text'>
+    )>, gallery: Array<(
+      { __typename?: 'Asset' }
+      & Pick<Asset, 'url' | 'height' | 'width'>
+    )> }
+  )> }
+);
